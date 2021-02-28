@@ -16,8 +16,7 @@ class WatchLink extends Component {
                         <span>{this.state.link.length}</span>
                     </div>
                 </a>
-                <a href={this.state.link.creater_link} rel="noopener noreferrer"> {this.state.link.creater}</a>
-
+                <a href={this.state.link.creator_link} rel="noopener noreferrer" target="_blank"> {this.state.link.creator}</a>
             </div>
         );
     }

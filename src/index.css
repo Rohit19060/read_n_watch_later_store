@@ -10,6 +10,17 @@ body {
 
 html {
     scroll-behavior: smooth !important;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
 }
 
 a {
@@ -42,11 +53,16 @@ a {
 }
 
 .main_heading {
+    overflow: hidden;
     position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     color: black;
     width: 100%;
-    margin-top: -120px;
     padding: 20px;
     text-align: center;
     font-size: 70px;
@@ -58,10 +74,10 @@ a {
     background-color: white;
     color: black;
     width: 100%;
-    margin-top: -20px;
-    padding: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
+    overflow: hidden;
+    top: 110px;
     font-weight: bold;
 }
 
@@ -113,19 +129,53 @@ button:hover {
     color: white;
 }
 
-.sort {
+.functions {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 160px;
+    width: 100%;
     font-weight: bold;
     font-size: 25px;
+    background-color: white;
+    padding: 20px 34%;
 }
 
-.sort select {
+.functions select {
     padding: 10px 10px 10px 0px;
     font-size: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     padding: 8px;
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+input {
+    padding: 10px;
+    min-width: 50%;
+}
+
+form {
+    width: 45%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
 }
