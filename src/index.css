@@ -179,3 +179,10 @@ form {
     border-radius: 15px;
     box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
 }
+
+.center_id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

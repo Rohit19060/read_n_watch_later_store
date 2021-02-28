@@ -10,6 +10,7 @@ class WatchLink extends Component {
             <div className="watch_link">
                 <button onClick={this.props.deleteLink.bind(this, this.props.link.id)}>Delete</button>
                 <a href={this.state.link.link} target="_blank" rel="noopener noreferrer" className="main_link">
+                    <h2 className="center_id">{this.state.link.id + 1}</h2>
                     <img src={this.state.link.thumb} alt={this.state.link.title} width="150px" />
                     <div>
                         <h4>{this.state.link.title}</h4>
