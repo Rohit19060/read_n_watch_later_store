@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
+    background-color: black;
 }
 
 html {
@@ -20,12 +21,16 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #000000;
+    background: #ffffff;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+img{
+    border-radius: 15px;
 }
 
 .home {
@@ -37,19 +42,25 @@ a {
 
 .home a {
     border-radius: 30px;
-    border: 2px black solid;
     outline: none;
     padding: 45px;
-    background-color: white;
-    color: black;
-    box-shadow: -1px -1px 42px 1px black;
+    background-color: black;
+    color: white;
+    box-shadow: -1px -1px 42px 1px white;
     font-size: 70px;
 }
 
 .home a:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     box-shadow: none;
+}
+
+.home a:active {
+    box-shadow: none;
+    outline: none;
+    background-color: white;
+    color: black;
 }
 
 .main_heading {
@@ -57,27 +68,27 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     width: 100%;
     padding: 20px;
     text-align: center;
-    font-size: 70px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .sub_heading {
     position: fixed;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     width: 100%;
     text-align: center;
     font-size: 50px;
     overflow: hidden;
-    top: 110px;
+    top: 72px;
     font-weight: bold;
 }
 
@@ -102,6 +113,7 @@ a {
     font-weight: bold;
     font-size: larger;
     margin-left: 100px;
+    border-radius: 15px;
 }
 
 .watch_link .main_link,
@@ -114,19 +126,39 @@ a {
     box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
 }
 
+
+.watch_link a:active,
+.read_link a:active {
+    box-shadow: none;
+    outline: none;
+    background-color: white;
+    color: black;
+}
+
+
 button {
+    border-radius: 10px;
     padding: 15px 30px;
     font-weight: bold;
-    background-color: white;
+    background-color: black;
     border: none;
     box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
     font-size: 15px;
     cursor: pointer;
+    color: white;
 }
 
 button:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+button:active {
+    box-shadow: none;
+    outline: none;
+    background-color: white;
+    color: black;
 }
 
 .functions {
@@ -135,12 +167,13 @@ button:hover {
     align-items: center;
     overflow: hidden;
     position: fixed;
-    top: 160px;
+    top: 120px;
     width: 100%;
     font-weight: bold;
     font-size: 25px;
-    background-color: white;
+    background-color: black;
     padding: 20px 34%;
+    color: white;
 }
 
 .functions select {
@@ -178,6 +211,8 @@ form {
     padding: 30px;
     border-radius: 15px;
     box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
+    color: white;
+    font-size: 22px;
 }
 
 .center_id {

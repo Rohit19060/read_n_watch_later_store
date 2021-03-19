@@ -46,6 +46,20 @@ app.delete("/api/read", function (req, res) {
     let readLink1 = JSON.parse(rawDataTemp);
     res.json(readLink1.readLater);
 });
+
+app.get("/api/WCount", (req, res) => {
+    let rawData = fs.readFileSync(filename);
+    let watchLink = JSON.parse(rawData);
+    let array = watchLink.watchLater;
+    res.json(array.length);
+})
+app.get("/api/RCount", (req, res) => {
+    let rawData = fs.readFileSync(filename);
+    let watchLink = JSON.parse(rawData);
+    let array = watchLink.readLater;
+    res.json(array.length);
+})
+
 app.get("/api/watch", (req, res) => {
     let rawData = fs.readFileSync(filename);
     let watchLink = JSON.parse(rawData);
@@ -119,11 +133,13 @@ app.post("/api/watch", (req, res) => {
     let watchLater = JSON.parse(rawData);
     var postData = JSON.stringify(req.body);
     var x = JSON.parse(postData);
-    x["id"] = watchLater["watchLater"].length + 1;
+    x["id"] = watchLater["watchLater"].length + 1 + 4000;
     watchLater["watchLater"].push(x);
     fs.writeFileSync(filename, JSON.stringify(watchLater), null, 4);
     res.send("ok");
 });
+
+
 app.delete("/api/watch", function (req, res) {
     let rawData = fs.readFileSync(filename);
     let watchLink = JSON.parse(rawData);
@@ -138,7 +154,71 @@ app.delete("/api/watch", function (req, res) {
     }
     watchLink.watchLater = x;
     fs.writeFileSync(filename, JSON.stringify(watchLink), null, 4);
-    let rawDataTemp = fs.readFileSync(filename);
-    let watchLink1 = JSON.parse(rawDataTemp);
-    res.json(watchLink1.watchLater);
+    let rawDataX = fs.readFileSync(filename);
+    let watchLinkX = JSON.parse(rawDataX);
+    var getSortID = parseInt(req.query.SORTid);
+    let array = watchLinkX.watchLater;
+    function GetSortOrder(prop) {
+        return (a, b) => {
+            if (a[prop] > b[prop]) {
+                return 1;
+            } else if (a[prop] < b[prop]) {
+                return -1;
+            }
+            return 0;
+        }
+    }
+    if (getSortID === 2) {
+        array.sort((a, b) => {
+            let secondsB = 0;
+            let secondsA = 0;
+            var timeB = b["length"].split(":");
+            var timeA = a["length"].split(":");
+            if (timeB.length == 3) {
+                secondsB = timeB[0] * 60 * 60 + timeB[1] * 60 + parseInt(timeB[2]);
+            } else {
+                secondsB = timeB[0] * 60 + parseInt(timeB[1]);
+            }
+            if (timeA.length == 3) {
+                secondsA = timeA[0] * 60 * 60 + timeA[1] * 60 + parseInt(timeA[2]);
+            } else {
+                secondsA = timeA[0] * 60 + parseInt(timeA[1]);
+            }
+            if (secondsA > secondsB) {
+                return 1;
+            } else if (secondsA < secondsB) {
+                return -1;
+            }
+            return 0;
+        });
+    } else if (getSortID === 3) {
+        array.sort((a, b) => {
+            let secondsB = 0;
+            let secondsA = 0;
+            var timeB = b["length"].split(":");
+            var timeA = a["length"].split(":");
+            if (timeB.length == 3) {
+                secondsB = timeB[0] * 60 * 60 + timeB[1] * 60 + parseInt(timeB[2]);
+            } else {
+                secondsB = timeB[0] * 60 + parseInt(timeB[1]);
+            }
+            if (timeA.length == 3) {
+                secondsA = timeA[0] * 60 * 60 + timeA[1] * 60 + parseInt(timeA[2]);
+            } else {
+                secondsA = timeA[0] * 60 + parseInt(timeA[1]);
+            }
+            if (secondsA < secondsB) {
+                return 1;
+            } else if (secondsA > secondsB) {
+                return -1;
+            }
+            return 0;
+        });
+    } else if (getSortID === 1) {
+        array.sort(GetSortOrder("title"));
+    } else if (getSortID === 4) {
+        array.sort(GetSortOrder("creator"));
+    }
+    res.json(array);
 });
+

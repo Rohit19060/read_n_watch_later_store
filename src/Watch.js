@@ -18,8 +18,10 @@ class Watch extends Component {
         });
     }
     deleteLink = (id) => {
+        let x = document.getElementById("sort").value;
+        console.log(x)
         axios
-            .delete("http://localhost:5000/api/watch?id=" + id)
+            .delete("http://localhost:5000/api/watch?id=" + id + "&SORTid=" + x)
             .then((res) => {
                 this.setState({ link: res.data });
             })
