@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const path = require("path");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 const filename = "server/data.json";
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
