@@ -5,7 +5,7 @@ class ReadCount extends Component {
         count: 0
     }
     componentDidMount() {
-        axios.get("http://localhost:5000/api/RCount", {
+        axios.get("http://localhost:8000/api/RCount", {
         }).then((res) => {
             this.setState({ count: res.data });
         });

@@ -9,7 +9,7 @@ class Watch extends Component {
     };
 
     componentDidMount() {
-        axios.get("http://localhost:5000/api/watch", {
+        axios.get("http://localhost:8000/api/watch", {
             params: {
                 id: 0
             }
@@ -21,7 +21,7 @@ class Watch extends Component {
         let x = document.getElementById("sort").value;
         console.log(x)
         axios
-            .delete("http://localhost:5000/api/watch?id=" + id + "&SORTid=" + x)
+            .delete("http://localhost:8000/api/watch?id=" + id + "&SORTid=" + x)
             .then((res) => {
                 this.setState({ link: res.data });
             })
@@ -29,7 +29,7 @@ class Watch extends Component {
     };
 
     handleClick = (id) => {
-        axios.get("http://localhost:5000/api/watch", {
+        axios.get("http://localhost:8000/api/watch", {
             params: {
                 id: id
             }

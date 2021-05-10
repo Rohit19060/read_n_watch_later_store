@@ -5,7 +5,7 @@ class WatchCount extends Component {
         count: 0
     }
     componentDidMount() {
-        axios.get("http://localhost:5000/api/WCount", {
+        axios.get("http://localhost:8000/api/WCount", {
         }).then((res) => {
             this.setState({ count: res.data });
         });

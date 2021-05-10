@@ -8,14 +8,14 @@ class Read extends Component {
     link: [],
   };
   componentDidMount() {
-    axios.get("http://localhost:5000/api/read").then((res) => {
+    axios.get("http://localhost:8000/api/read").then((res) => {
       this.setState({ link: res.data });
     });
   }
 
   deleteLink = (id) => {
     axios
-      .delete("http://localhost:5000/api/read?id=" + id)
+      .delete("http://localhost:8000/api/read?id=" + id)
       .then((res) => {
         this.setState({ link: res.data });
       })

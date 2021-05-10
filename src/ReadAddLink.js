@@ -15,7 +15,7 @@ class ReadAddLink extends Component {
             link: this.state.link,
         };
         axios
-            .post("http://localhost:5000/api/read", link)
+            .post("http://localhost:8000/api/read", link)
             .then(() => this.setState({ redirect: true }))
             .catch((err) => console.error(err));
     };

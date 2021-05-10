@@ -31,7 +31,7 @@ class WatchAddLink extends Component {
             creator_link
         };
         axios
-            .post("http://localhost:5000/api/watch", postContent)
+            .post("http://localhost:8000/api/watch", postContent)
             .then(() => this.setState({ redirect: true }))
             .catch((err) => console.error(err));
     };
