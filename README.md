@@ -30,7 +30,7 @@
 </a>
 </p>
 
-<p align="center" title="Read n Watch Later"><img src="./assets/images/main.png" alt="Read n Watch Later" /></p>
+<p align="center" title="Read n Watch Later"><img src="./assets/images/main.gif" alt="Read n Watch Later" /></p>
 
 <h2 align="center">🌐 Links 🌐</h2>
 <p align="center">
