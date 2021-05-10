@@ -1,7 +1,7 @@
 {
   "name": "read-n-watch-later-store",
   "version": "1.0.1",
-  "description": "Application that let you store read later and watch later links, JSON File is used as Database for creating, reading and deleting links",
+  "description": "An application that let you store read later and watch later links, JSON File is used as Database for creating, reading, and deleting links",
   "author": {
     "name": "Rohit Jain",
     "email": "rohitjain19060@gmail.com",

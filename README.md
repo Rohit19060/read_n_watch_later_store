@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">🌟 Read n Watch Later 🌟</h1>
-<p align="center">Application that let you store read later and watch later links, JSON File is used as Database for creating, reading and deleting links</p>
+<p align="center">An application that let you store read later and watch later links, JSON File is used as Database for creating, reading, and deleting links</p>
 
 <p align="center">
 <a href="https://github.com/Rohit19060/read-n-watch-later-store/blob/master/LICENSE" target="_blank" title="License">
@@ -45,7 +45,7 @@
 
 - **Easy form**
 
-- **Couple of Sort types**
+- **A couple of Sort types**
 
 ## 🦋 Prerequisite
 
@@ -151,7 +151,7 @@ This command will execute `node server`, For running the server file on you can 
 
 > [`src/*.js`](https://github.com/Rohit19060/read-n-watch-later-store/tree/main/src "Src Directory"): All React components are in this directory
 
-> [`src/server/data.json`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server/data.json "Data Directory"): This is our data file i.e. file as database.
+> [`src/server/data.json`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server/data.json "Data Directory"): This is our data file i.e. file as a database.
 
 ## 🎊 Future Updates
 
