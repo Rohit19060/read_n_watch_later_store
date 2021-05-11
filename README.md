@@ -147,11 +147,11 @@ This command will execute `node server`, For running the server file on you can 
 
 ## 📂 Directory Structure
 
-> [`server.js`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server.js "server"): Main Server File
+> [`./server.js`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server.js "server"): Main Server File
 
-> [`src/*.js`](https://github.com/Rohit19060/read-n-watch-later-store/tree/main/src "Src Directory"): All React components are in this directory
+> [`./src/*.js`](https://github.com/Rohit19060/read-n-watch-later-store/tree/main/src "Src Directory"): All React components are in this directory
 
-> [`src/server/data.json`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server/data.json "Data Directory"): This is our data file i.e. file as a database.
+> [`./src/server/data.json`](https://github.com/Rohit19060/read-n-watch-later-store/blob/main/server/data.json "Data Directory"): This is our data file i.e. file as a database.
 
 ## 🎊 Future Updates
 
