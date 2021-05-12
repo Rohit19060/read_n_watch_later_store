@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, "build")));
 app.listen(port, () => {
-    console.log(`http://localhost:${port}`);
+    console.log(`App listening on http://localhost:${port}/`);
 });
 app.get("/api/read", (req, res) => {
     let rawData = fs.readFileSync(filename);
